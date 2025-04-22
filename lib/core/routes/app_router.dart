@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:optikick/features/auth/presentation/view/login.dart';
+import 'package:optikick/features/home/presentation/pages/home_page.dart';
 import 'package:optikick/features/on_boarding/presentation/view/onboarding.dart';
 import 'package:optikick/features/splash/presentation/view/splash_view.dart';
 import 'routes.dart';
@@ -13,6 +14,8 @@ class AppRouter {
         return _buildRoute(OnboardingView());
       case RoutesName.login:
         return _buildRoute(const LoginView());
+      case RoutesName.home:
+      return _buildRoute(HomePage());
       default:
         return _buildRoute(
           const Scaffold(
