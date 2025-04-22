@@ -4,7 +4,6 @@ import 'package:optikick/features/home/presentation/data/info_card_model.dart';
 import 'package:optikick/features/home/presentation/widgets/overviewsection.dart';
 import 'package:optikick/features/home/presentation/widgets/info_card.dart';
 
-// HomeScreenBody Widget with Custom Paint Widgets
 class HomeScreenBody extends StatelessWidget {
   const HomeScreenBody({Key? key}) : super(key: key);
 
@@ -32,27 +31,48 @@ class HomeScreenBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               OverviewSection(),
-              Column(
-                children: [
-                  GridView.count(
-                    crossAxisCount: 2,
-                    padding: const EdgeInsets.all(4),
-                    childAspectRatio: 0.8,
-                    crossAxisSpacing: 16,
-                    mainAxisSpacing: 16,
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    children: List.generate(infoCards.length, (index) {
-                      final card = infoCards[index];
-                      return InfoCard(
-                        imagePath: card.imagePath,
-                        title: card.title,
-                        description: card.description,
-                      );
-                    }),
-                  ),
-                ],
-              )
+              // Shadow effect container for the grid
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.3),
+                      blurRadius: 24,
+                      spreadRadius: 4,
+                      offset: Offset(0, 8.h),
+                    ),
+                  ],
+                ),
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 8.h),
+                  childAspectRatio: 0.75,
+                  crossAxisSpacing: 24.w,
+                  mainAxisSpacing: 18.h,
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  children: List.generate(infoCards.length, (index) {
+                    final card = infoCards[index];
+                    return InkWell(
+                      borderRadius: BorderRadius.circular(12),
+                      enableFeedback: true,
+                      onTap: () {
+                        print("tapped on ${card.title}");
+                      },
+                     
+                      child: Hero(
+                        tag: 'infoCard_${card.title}',
+                        child: InfoCard(
+                          imagePath: card.imagePath,
+                          title: card.title,
+                          description: card.description,
+                        ),
+                      ),
+                    );
+                  }),
+                ),
+              ),
+              SizedBox(height: 24.h), // Additional bottom spacing
             ],
           ),
         ),

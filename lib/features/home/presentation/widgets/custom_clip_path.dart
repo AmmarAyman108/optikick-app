@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MyClipperPath extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    double radius = 30.0;
+    double radius = 20.0;
 
     Path path = Path()
       ..moveTo(0, 0)
