@@ -19,12 +19,12 @@ class OptikickApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (_, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        //  initialRoute:RoutesName.splash,
-        home: BlocProvider(
-          create: (context) => BottomNavCubit(),
-          child: BottomNavView(),
-        ), // RoutesName.splash,
-        // onGenerateRoute: AppRouter.generate,
+          initialRoute:RoutesName.splash,
+        // home: BlocProvider(
+        //   create: (context) => BottomNavCubit(),
+        //   child: BottomNavView(),
+        // ), // RoutesName.splash,
+         onGenerateRoute: AppRouter.generate,
       ),
     );
   }

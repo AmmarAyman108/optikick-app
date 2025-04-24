@@ -38,7 +38,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                       onTap: () {
                         Navigator.pushReplacementNamed(
                           context,
-                          RoutesName.login,
+                          RoutesName.bottomNavView,
                         );
                       },
                       child: Text(
@@ -109,7 +109,7 @@ class _OnboardingViewState extends State<OnboardingView> {
         ),
         onPressed: () {
           if (currentPageIndex == onboardingImages.length - 1) {
-            Navigator.pushReplacementNamed(context, RoutesName.login);
+            Navigator.pushReplacementNamed(context, RoutesName.bottomNavView);
           } else {
             pageController.nextPage(
               duration: const Duration(milliseconds: 300),

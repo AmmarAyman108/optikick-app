@@ -41,11 +41,11 @@ class BottomNavView extends StatelessWidget {
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.notifications_none),
-                label: 'Search',
+                label: 'Notifications',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.email_outlined),
-                label: 'Profile',
+                label: 'Email',
               ),
             ],
             currentIndex: cubit.currentIndex,

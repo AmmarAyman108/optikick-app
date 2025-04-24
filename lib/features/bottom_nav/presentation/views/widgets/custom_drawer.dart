@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:material_symbols_icons/symbols.dart';
+import 'package:optikick/core/routes/routes.dart';
 import 'package:optikick/core/utils/colors.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -67,7 +67,7 @@ class CustomDrawer extends StatelessWidget {
                 style: TextStyle(color: ColorsManager.realWhiteColor),
               ),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context, RoutesName.profile);
               },
             ),
             ListTile(

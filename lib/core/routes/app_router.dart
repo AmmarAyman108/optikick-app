@@ -5,6 +5,7 @@ import 'package:optikick/features/bottom_nav/presentation/cubit/bottom_nav_cubit
 import 'package:optikick/features/bottom_nav/presentation/views/bottom_nav_view.dart';
 import 'package:optikick/features/home/presentation/pages/home_page.dart';
 import 'package:optikick/features/on_boarding/presentation/view/onboarding.dart';
+import 'package:optikick/features/profile/presentation/view/profile_view.dart';
 import 'package:optikick/features/splash/presentation/view/splash_view.dart';
 import 'routes.dart';
 
@@ -19,12 +20,15 @@ class AppRouter {
         return _buildRoute(const LoginView());
       case RoutesName.home:
         return _buildRoute(HomePage());
+      case RoutesName.profile:
+      return _buildRoute(ProfileView());
       case RoutesName.bottomNavView:
-        return _buildRoute(BlocBuilder<BottomNavCubit, BottomNavState>(
-          builder: (context, state) {
-            return BottomNavView();
-          },
-        ));
+        return _buildRoute(
+          BlocProvider(
+            create: (context) => BottomNavCubit(),
+            child: const BottomNavView(),
+          ),
+        );
       default:
         return _buildRoute(
           const Scaffold(
