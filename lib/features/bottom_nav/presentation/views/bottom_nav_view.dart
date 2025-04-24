@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:optikick/core/utils/colors.dart';
 import 'package:optikick/features/bottom_nav/presentation/cubit/bottom_nav_cubit.dart';
 import 'package:optikick/features/bottom_nav/presentation/views/widgets/custom_app_bar.dart';
 import 'package:optikick/features/bottom_nav/presentation/views/widgets/custom_drawer.dart';
@@ -13,8 +14,16 @@ class BottomNavView extends StatelessWidget {
       builder: (context, state) {
         final cubit = BlocProvider.of<BottomNavCubit>(context);
         return Scaffold(
-          appBar: CustomAppBar(currentIndex: cubit.currentIndex),
-          body: cubit.screens[cubit.currentIndex],
+          body: Column(
+            children: [
+              Container(
+                color: ColorsManager.backgroundColor,
+                height: MediaQuery.of(context).padding.top,
+              ),
+              CustomAppBar(currentIndex: cubit.currentIndex),
+              Expanded(child: cubit.screens[cubit.currentIndex]),
+            ],
+          ),
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             selectedItemColor: Colors.white,
