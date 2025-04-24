@@ -8,19 +8,17 @@ class InfoCard extends StatelessWidget {
   final String description;
 
   const InfoCard({
-    Key? key,
+    super.key,
     required this.imagePath,
     required this.title,
     required this.description,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return ClipPath(
       clipper: CustomCardClipper(),
       child: Container(
-        width: 160.w,
-        height: 230.h,
         decoration: BoxDecoration(
           gradient: const LinearGradient(
             begin: Alignment.topCenter,
@@ -41,7 +39,7 @@ class InfoCard extends StatelessWidget {
           ],
         ),
         child: Padding(
-          padding: EdgeInsets.all(12.0.w),
+          padding: EdgeInsets.all(10.0.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -53,15 +51,19 @@ class InfoCard extends StatelessWidget {
               SizedBox(height: 6.h),
               Text(
                 title,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 5,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 12.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-             // SizedBox(height: 4.h),
+              SizedBox(height: 4.h),
               Text(
                 description,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 5,
                 style: TextStyle(
                   color: Colors.white70,
                   fontSize: 11.sp,

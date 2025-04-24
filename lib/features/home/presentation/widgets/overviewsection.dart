@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:optikick/features/home/presentation/widgets/custom_clip_path.dart';
-import 'package:optikick/optikick_app.dart';
 
 class OverviewSection extends StatelessWidget {
+  const OverviewSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -154,6 +155,7 @@ class StatRow extends StatelessWidget {
   final String count;
 
   const StatRow({
+    super.key,
     required this.color,
     required this.label,
     required this.percentage,
@@ -198,6 +200,8 @@ class StatRow extends StatelessWidget {
 }
 
 class RingPieChart extends StatelessWidget {
+  const RingPieChart({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(

@@ -5,7 +5,7 @@ import 'package:optikick/features/home/presentation/widgets/overviewsection.dart
 import 'package:optikick/features/home/presentation/widgets/info_card.dart';
 
 class HomeScreenBody extends StatelessWidget {
-  const HomeScreenBody({Key? key}) : super(key: key);
+  const HomeScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class HomeScreenBody extends StatelessWidget {
                 child: GridView.count(
                   crossAxisCount: 2,
                   padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 8.h),
-                  childAspectRatio: 0.75,
+                  childAspectRatio: 0.65,
                   crossAxisSpacing: 24.w,
                   mainAxisSpacing: 18.h,
                   physics: const NeverScrollableScrollPhysics(),
@@ -59,7 +59,6 @@ class HomeScreenBody extends StatelessWidget {
                       onTap: () {
                         print("tapped on ${card.title}");
                       },
-                     
                       child: Hero(
                         tag: 'infoCard_${card.title}',
                         child: InfoCard(

@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:optikick/core/utils/colors.dart';
-import 'package:optikick/core/utils/strings.dart';
 
 // Custom Painter for the Circular Chart in the Overview Section
 class CircularChartPainter extends CustomPainter {
@@ -87,7 +83,8 @@ class CircularChartPainter extends CustomPainter {
       startAngle += atRiskSweep;
 
       // Draw Underperforming segment
-      final underperformingSweep = (underperforming / total) * 360 * (3.14159 / 180);
+      final underperformingSweep =
+          (underperforming / total) * 360 * (3.14159 / 180);
       canvas.drawArc(
         Rect.fromCircle(center: center, radius: radius - strokeWidth / 2),
         startAngle,
@@ -181,7 +178,7 @@ class CardBackgroundPainter extends CustomPainter {
 
 // HomeScreenBody Widget with Custom Paint Widgets
 class HomeScreenBody extends StatelessWidget {
-  const HomeScreenBody({Key? key}) : super(key: key);
+  const HomeScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -236,13 +233,17 @@ class HomeScreenBody extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        _buildMetricRow('Optimal', '48% (12)', const Color(0xFF4A90E2)),
+                        _buildMetricRow(
+                            'Optimal', '48% (12)', const Color(0xFF4A90E2)),
                         SizedBox(height: 8.h),
-                        _buildMetricRow('At Risk', '24% (6)', const Color(0xFF2E2E54)),
+                        _buildMetricRow(
+                            'At Risk', '24% (6)', const Color(0xFF2E2E54)),
                         SizedBox(height: 8.h),
-                        _buildMetricRow('Underperforming', '16% (4)', const Color(0xFF6B5B95)),
+                        _buildMetricRow('Underperforming', '16% (4)',
+                            const Color(0xFF6B5B95)),
                         SizedBox(height: 8.h),
-                        _buildMetricRow('Recovering', '12% (3)', const Color(0xFF88B04B)),
+                        _buildMetricRow(
+                            'Recovering', '12% (3)', const Color(0xFF88B04B)),
                       ],
                     ),
                   ),
@@ -263,14 +264,17 @@ class HomeScreenBody extends StatelessWidget {
                     subtitle: 'Why it matters and tips for how to do it well.',
                   ),
                   _buildCard(
-                    image: 'assets/images/mental_health.png', // Placeholder path
+                    image:
+                        'assets/images/mental_health.png', // Placeholder path
                     title: 'Common Concerns About Mental Health',
-                    subtitle: 'Learn about common mental health conditions and what to pay attention to.',
+                    subtitle:
+                        'Learn about common mental health conditions and what to pay attention to.',
                   ),
                   _buildCard(
                     image: 'assets/images/vitals.png', // Placeholder path
                     title: 'Understanding Your Vitals',
-                    subtitle: 'Certain metrics can give you a sense of how the body is doing.',
+                    subtitle:
+                        'Certain metrics can give you a sense of how the body is doing.',
                   ),
                   _buildCard(
                     image: 'assets/images/sleep.png', // Placeholder path
@@ -309,7 +313,10 @@ class HomeScreenBody extends StatelessWidget {
     );
   }
 
-  Widget _buildCard({required String image, required String title, required String subtitle}) {
+  Widget _buildCard(
+      {required String image,
+      required String title,
+      required String subtitle}) {
     return CustomPaint(
       painter: CardBackgroundPainter(),
       child: Container(
