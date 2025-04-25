@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:optikick/core/utils/colors.dart';
-import 'package:optikick/features/stats/presentation/view/widgets/stats_info_item.dart';
+import 'package:optikick/features/player/widgets/player_item.dart';
 
-class StatsView extends StatelessWidget {
-  const StatsView({super.key});
+class PlayerView extends StatelessWidget {
+  const PlayerView({super.key, required this.playerName});
+
+  final String playerName ;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +31,19 @@ class StatsView extends StatelessWidget {
               centerTitle: true,
               backgroundColor: ColorsManager.backgroundColor,
               elevation: 0,
+              actions: [
+                IconButton(
+                  icon: Icon(
+                    Symbols.edit_square_rounded,
+                    color: ColorsManager.realWhiteColor,
+                    size: 22.sp,
+                   opticalSize: 6.sp
+                  ),
+                  onPressed: () {
+                    
+                  },
+                ),
+              ],
               leading: IconButton(
                 icon: Icon(
                   Icons.arrow_back_ios_new_rounded,
@@ -39,7 +55,7 @@ class StatsView extends StatelessWidget {
                 },
               ),
               title: Text(
-                "Stats",
+              playerName,
                 style: TextStyle(
                   fontSize: 18.sp,
                   color: ColorsManager.realWhiteColor,
@@ -52,51 +68,30 @@ class StatsView extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        StatsInfoItem(
-                          position: 'Forward',
-                          title: 'Salah',
-                          statusValue: 'Optimal',
+                        PlayerItem(
+                         
+                          title: 'Focus :  Stamina & endurance',
+                      
                         ),
                         SizedBox(
-                          height: 18.h,
+                          height: 22.h,
                         ),
-                        StatsInfoItem(
-                          position: 'Forward',
-                          title: 'Diaz',
-                          statusValue: 'Optimal',
-                        ),
-                        SizedBox(
-                          height: 18.h,
-                        ),
-                        StatsInfoItem(
-                          position: 'Forward',
-                          title: 'Jota',
-                          statusValue: 'Optimal',
+                         PlayerItem(
+                         
+                          title: 'Cardio exercises: 30 mins/day',
+                          toDo: "Interval running drills",
+                      
                         ),
                         SizedBox(
-                          height: 18.h,
+                          height: 22.h,
                         ),
-                        StatsInfoItem(
-                          position: 'Forward',
-                          title: 'Gakpo',
-                          statusValue: 'Optimal',
+                         PlayerItem(
+                         
+                          title: 'Cycling: 45 mins twice a week',
+                          toDo: "Proper hydration and recovery techniques",
+                      
                         ),
-                        SizedBox(
-                          height: 18.h,
-                        ),
-                        StatsInfoItem(
-                          title: 'Nunez',
-                          position: 'Forward',
-                          statusValue: 'Optimal',
-                        ),
-                        SizedBox(
-                          height: 18.h,
-                        ),
-                        StatsInfoItem(
-                          title: 'Szoboszlai',
-                          position: 'Midfielder',
-                          statusValue: 'Optimal',
-                        ),
+                       
                       ],
                     )))));
   }

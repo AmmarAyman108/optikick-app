@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:optikick/core/utils/colors.dart';
-import 'package:optikick/features/stats/presentation/view/widgets/stats_info_item.dart';
+import 'package:optikick/features/training_program/presentation/view/widgets/traning_program_item.dart';
 
-class StatsView extends StatelessWidget {
-  const StatsView({super.key});
+class TraningProgramView extends StatelessWidget {
+  const TraningProgramView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class StatsView extends StatelessWidget {
                 },
               ),
               title: Text(
-                "Stats",
+                "Training Program",
                 style: TextStyle(
                   fontSize: 18.sp,
                   color: ColorsManager.realWhiteColor,
@@ -52,7 +52,7 @@ class StatsView extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        StatsInfoItem(
+                        TraningProgramItem(
                           position: 'Forward',
                           title: 'Salah',
                           statusValue: 'Optimal',
@@ -60,23 +60,31 @@ class StatsView extends StatelessWidget {
                         SizedBox(
                           height: 18.h,
                         ),
-                        StatsInfoItem(
-                          position: 'Forward',
-                          title: 'Diaz',
+                        TraningProgramItem(
+                          position: 'Midfielder',
+                          title: 'Kante',
                           statusValue: 'Optimal',
                         ),
                         SizedBox(
                           height: 18.h,
                         ),
-                        StatsInfoItem(
-                          position: 'Forward',
-                          title: 'Jota',
+                        TraningProgramItem(
+                          position: 'Defender',
+                          title: 'Van Dijk',
                           statusValue: 'Optimal',
                         ),
                         SizedBox(
                           height: 18.h,
                         ),
-                        StatsInfoItem(
+                        TraningProgramItem(
+                          position: 'Goalkeeper',
+                          title: 'Alisson',
+                          statusValue: 'Optimal',
+                        ),
+                        SizedBox(
+                          height: 18.h,
+                        ),
+                        TraningProgramItem(
                           position: 'Forward',
                           title: 'Gakpo',
                           statusValue: 'Optimal',
@@ -84,7 +92,7 @@ class StatsView extends StatelessWidget {
                         SizedBox(
                           height: 18.h,
                         ),
-                        StatsInfoItem(
+                        TraningProgramItem(
                           title: 'Nunez',
                           position: 'Forward',
                           statusValue: 'Optimal',
@@ -92,11 +100,8 @@ class StatsView extends StatelessWidget {
                         SizedBox(
                           height: 18.h,
                         ),
-                        StatsInfoItem(
-                          title: 'Szoboszlai',
-                          position: 'Midfielder',
-                          statusValue: 'Optimal',
-                        ),
+                        
+                       
                       ],
                     )))));
   }

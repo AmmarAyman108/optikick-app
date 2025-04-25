@@ -95,6 +95,7 @@ class CustomDrawer extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.pop(context);
+                Navigator.pushNamed(context, RoutesName.trainingProgram);
               },
             ),
             ListTile(

@@ -5,9 +5,11 @@ import 'package:optikick/features/bottom_nav/presentation/cubit/bottom_nav_cubit
 import 'package:optikick/features/bottom_nav/presentation/views/bottom_nav_view.dart';
 import 'package:optikick/features/home/presentation/pages/home_page.dart';
 import 'package:optikick/features/on_boarding/presentation/view/onboarding.dart';
+import 'package:optikick/features/player/views/player_view.dart';
 import 'package:optikick/features/profile/presentation/view/profile_view.dart';
 import 'package:optikick/features/splash/presentation/view/splash_view.dart';
 import 'package:optikick/features/stats/presentation/view/stats_view.dart';
+import 'package:optikick/features/training_program/presentation/view/traning_program_view.dart';
 import 'routes.dart';
 
 class AppRouter {
@@ -25,6 +27,11 @@ class AppRouter {
       return _buildRoute(ProfileView());
       case RoutesName.stats:
         return _buildRoute(StatsView());
+      case RoutesName.trainingProgram:
+      return _buildRoute(TraningProgramView());
+      case RoutesName.playerView:
+        return _buildRoute(PlayerView(playerName: "Salah",));
+      
       case RoutesName.bottomNavView:
         return _buildRoute(
           BlocProvider(

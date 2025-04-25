@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:optikick/core/utils/colors.dart';
 import 'package:optikick/features/profile/widgets/info_item.dart';
 
