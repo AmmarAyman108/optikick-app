@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:optikick/core/utils/colors.dart';
-import 'package:optikick/features/profile/widgets/info_item.dart';
+import 'package:optikick/features/stats/presentation/view/widgets/stats_info_item.dart';
 
-class ProfileView extends StatelessWidget {
-  const ProfileView({super.key});
+class StatsView extends StatelessWidget {
+  const StatsView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class ProfileView extends StatelessWidget {
               Color.fromARGB(255, 40, 59, 52),
               Color(0xff566761),
             ],
-            stops: [0.0, 0.5,0.9],
+            stops: [0.0, 0.5, 0.9],
           ),
         ),
         child: Scaffold(
@@ -40,7 +40,7 @@ class ProfileView extends StatelessWidget {
                 },
               ),
               title: Text(
-                "Profile",
+                "Stats",
                 style: TextStyle(
                   fontSize: 18.sp,
                   color: ColorsManager.realWhiteColor,
@@ -53,53 +53,52 @@ class ProfileView extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              color: Colors.transparent,
-                              child: Icon(
-                                Icons.account_circle_rounded,
-                                color: ColorsManager.realWhiteColor,
-                                size: 60.sp,
-                              ),
-                            ),
-                          ],
+                        StatsInfoItem(  position: 'Forward',
+                          title: 'Salah',
+                         
+                          statusValue: 'Optimal',
                         ),
                         SizedBox(
                           height: 18.h,
                         ),
-                        PersonalInfoItem(
-                            firstTitle: "First Name",
-                            firstValue: "MO",
-                            secondTitle: "Last Name",
-                            secondValue: "Salah"),
+                        StatsInfoItem(  position: 'Forward',
+                          title: 'Diaz',
+                         
+                          statusValue: 'Optimal',
+                        ),
                         SizedBox(
                           height: 18.h,
                         ),
-                        PersonalInfoItem(
-                            firstTitle: "Date of Birth",
-                            firstValue: "15 June 1992 (32)",
-                            secondTitle: "Sex",
-                            secondValue: "Male"),
+                        StatsInfoItem(  position: 'Forward',
+                          title: 'Jota',
+                          
+                          statusValue: 'Optimal',
+                        ),
                         SizedBox(
                           height: 18.h,
                         ),
-                        PersonalInfoItem(
-                            firstTitle: "Status",
-                            firstValue: "Optimal",
-                            secondTitle: "Position",
-                            secondValue: "Forward"),
+                        StatsInfoItem(  position: 'Forward',
+                          title: 'Gakpo',
+                         
+                          statusValue: 'Optimal',
+                        ),
                         SizedBox(
                           height: 18.h,
                         ),
-                        PersonalInfoItem(
-                            firstTitle: "Blood Type",
-                            firstValue: "A+",
-                            secondTitle: "Email",
-                            secondValue: "7Mos10@gmail.com"),
+                        StatsInfoItem(
+                          title: 'Nunez',
+                          position: 'Forward',
+                         
+                          statusValue: 'Optimal',
+                        ),
                         SizedBox(
                           height: 18.h,
+                        ),
+                        StatsInfoItem(
+                          title: 'Szoboszlai',
+                          position: 'Midfielder',
+                          
+                          statusValue: 'Optimal',
                         ),
                       ],
                     )))));

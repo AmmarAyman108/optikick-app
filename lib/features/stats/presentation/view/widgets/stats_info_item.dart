@@ -1,33 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:optikick/core/utils/colors.dart';
 
-import '../../../core/utils/colors.dart';
+class StatsInfoItem extends StatelessWidget {
+  const StatsInfoItem({
+    required this.title,
+    required this.statusValue,
+    required this.position,
+  });
 
-class PersonalInfoItem extends StatelessWidget {
-  const PersonalInfoItem(
-      {required this.firstTitle,
-      required this.firstValue,
-      required this.secondTitle,
-      required this.secondValue});
-  final String firstTitle;
-  final String firstValue;
-  final String secondTitle;
-  final String secondValue;
+  final String title;
+  final String statusValue;
+  final String position;
 
   @override
   Widget build(BuildContext context) {
     return Column(children: [
       Container(
-          height: 105.h,
+          height: 100.h,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             gradient: const LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                
                 Color.fromARGB(255, 4, 21, 10),
-               // Color.fromARGB(255, 40, 59, 52),
+                // Color.fromARGB(255, 40, 59, 52),
                 Color(0xff5D6E68),
               ],
               stops: [0.0, 0.9],
@@ -39,13 +38,23 @@ class PersonalInfoItem extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Column(
               children: [
                 Row(
                   children: [
+                    SizedBox(
+                        height: 35.h,
+                        width: 35.w,
+                        child: SvgPicture.asset(
+                          "assets/images/Activity.svg",
+                          fit: BoxFit.fill,
+                        )),
+                    SizedBox(
+                      width: 8.w,
+                    ),
                     Text(
-                      firstTitle,
+                      title,
                       style: TextStyle(
                         fontSize: 16.sp,
                         color: ColorsManager.realWhiteColor,
@@ -54,44 +63,51 @@ class PersonalInfoItem extends StatelessWidget {
                     ),
                     const Spacer(),
                     Text(
-                      firstValue,
+                      position,
                       style: TextStyle(
-                        fontSize: 16.sp,
+                        fontSize: 12.sp,
                         color: ColorsManager.realWhiteColor,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w100,
                       ),
+                    ),
+                    SizedBox(
+                      width: 4.w,
+                    ),
+                    Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      color: ColorsManager.realWhiteColor,
+                      size: 18.sp,
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                Divider(
-                  color: ColorsManager.realWhiteColor,
-                  thickness: 0.2.h,
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
+                Spacer(),
                 Row(
                   children: [
                     Text(
-                      secondTitle,
+                      "Status",
                       style: TextStyle(
-                        fontSize: 16.sp,
+                        fontSize: 17.sp,
                         color: ColorsManager.realWhiteColor,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 8.w,
+                    ),
+                    Text(
+                      statusValue,
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        color: ColorsManager.realWhiteColor,
+                        fontWeight: FontWeight.w100,
                       ),
                     ),
                     const Spacer(),
-                    Text(
-                      secondValue,
-                      style: TextStyle(
-                        fontSize: 16.sp,
-                        color: ColorsManager.realWhiteColor,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
+                    SvgPicture.asset(
+                      "assets/images/bar_chart.svg",
+                      height: 45.h,
+                      width: 45.w,
+                    )
                   ],
                 ),
               ],

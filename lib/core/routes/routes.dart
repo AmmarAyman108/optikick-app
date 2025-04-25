@@ -5,4 +5,5 @@ class RoutesName {
   static const home = '/home';
   static const bottomNavView = '/bottomNavView';
   static const profile = '/profile';
+  static const stats = '/stats';
 }

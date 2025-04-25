@@ -7,6 +7,7 @@ import 'package:optikick/features/home/presentation/pages/home_page.dart';
 import 'package:optikick/features/on_boarding/presentation/view/onboarding.dart';
 import 'package:optikick/features/profile/presentation/view/profile_view.dart';
 import 'package:optikick/features/splash/presentation/view/splash_view.dart';
+import 'package:optikick/features/stats/presentation/view/stats_view.dart';
 import 'routes.dart';
 
 class AppRouter {
@@ -22,6 +23,8 @@ class AppRouter {
         return _buildRoute(HomePage());
       case RoutesName.profile:
       return _buildRoute(ProfileView());
+      case RoutesName.stats:
+        return _buildRoute(StatsView());
       case RoutesName.bottomNavView:
         return _buildRoute(
           BlocProvider(
