@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:optikick/core/routes/routes.dart';
 import 'package:optikick/core/utils/colors.dart';
-import 'package:optikick/features/stats/presentation/view/widgets/stats_info_item.dart';
+import 'package:optikick/features/stats/presentation/view/widgets/player_stats_info.dart';
 
-class StatsView extends StatelessWidget {
-  const StatsView({super.key});
+class PlayerStats extends StatelessWidget {
+  const PlayerStats({super.key});
+
+  final String playerName = "Nunez";
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,7 @@ class StatsView extends StatelessWidget {
                 },
               ),
               title: Text(
-                "Stats",
+                playerName,
                 style: TextStyle(
                   fontSize: 18.sp,
                   color: ColorsManager.realWhiteColor,
@@ -50,58 +52,55 @@ class StatsView extends StatelessWidget {
             backgroundColor: Colors.transparent,
             body: SingleChildScrollView(
                 child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(10),
                     child: Column(
                       children: [
+                        PlayerStatsInfo(
+                          title: 'Resting Heart Rate',
+                          statusValueType: 'bpm',
+                          time: '5:35 am',
+                          statusValue: '64',
+                        ),
+                        SizedBox(
+                          height: 14.h,
+                        ),
+                        PlayerStatsInfo(
+                          title: 'Max Heart Rate',
+                          time: '9:35 am',
+                          statusValue: '200',
+                          statusValueType: 'bpm',
+                        ),
+                        SizedBox(
+                          height: 14.h,
+                        ),
+                        PlayerStatsInfo(
+                          title: 'HRV',
+                          time: '5:35 am',
+                          statusValue: '53.4',
+                          statusValueType: 'ms',
+                        ),
+                        SizedBox(
+                          height: 14.h,
+                        ),
+                        PlayerStatsInfo(
+                          title: 'VO2 Max',
+                          time: '5:35 am',
+                          statusValue: '42',
+                          statusValueType: '(ml/kg/min)',
+                        ),
+                        SizedBox(
+                          height: 14.h,
+                        ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context,RoutesName.playerStats);
+                            Navigator.pushNamed(context, RoutesName.reactionTimeView);
                           },
-                          child: StatsInfoItem(
-                            position: 'Forward',
-                            title: 'Salah',
-                            statusValue: 'Optimal',
+                          child: PlayerStatsInfo(
+                            title: 'Reaction Time',
+                            time: '5:35 am',
+                            statusValue: '320',
+                            statusValueType: 'ms',
                           ),
-                        ),
-                        SizedBox(
-                          height: 18.h,
-                        ),
-                        StatsInfoItem(
-                          position: 'Forward',
-                          title: 'Diaz',
-                          statusValue: 'Optimal',
-                        ),
-                        SizedBox(
-                          height: 18.h,
-                        ),
-                        StatsInfoItem(
-                          position: 'Forward',
-                          title: 'Jota',
-                          statusValue: 'Optimal',
-                        ),
-                        SizedBox(
-                          height: 18.h,
-                        ),
-                        StatsInfoItem(
-                          position: 'Forward',
-                          title: 'Gakpo',
-                          statusValue: 'Optimal',
-                        ),
-                        SizedBox(
-                          height: 18.h,
-                        ),
-                        StatsInfoItem(
-                          title: 'Nunez',
-                          position: 'Forward',
-                          statusValue: 'Optimal',
-                        ),
-                        SizedBox(
-                          height: 18.h,
-                        ),
-                        StatsInfoItem(
-                          title: 'Szoboszlai',
-                          position: 'Midfielder',
-                          statusValue: 'Optimal',
                         ),
                       ],
                     )))));
