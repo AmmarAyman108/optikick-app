@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:optikick/core/constants/assets.dart';
 import 'package:optikick/core/utils/colors.dart';
 import 'package:optikick/core/utils/strings.dart';
 
@@ -42,7 +43,7 @@ class CustomAppBar extends StatelessWidget {
                       child: currentIndex == 0
                           ? SizedBox(
                               height: 35.h,
-                              child: Image.asset(StringManager.homeIcon),
+                              child: Image.asset(Assets.imagesLogoTest),
                             )
                           : Text(
                               currentIndex == 1 ? "Notifications" : "Messages",
