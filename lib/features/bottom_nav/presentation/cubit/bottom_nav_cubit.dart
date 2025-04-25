@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optikick/features/home/presentation/pages/home_page.dart';
+import 'package:optikick/features/message/presentation/view/message_view.dart';
 
 part 'bottom_nav_state.dart';
 
@@ -12,7 +13,7 @@ class BottomNavCubit extends Cubit<BottomNavState> {
     screens = [
       HomePage(),
       Container(),
-      Container(),
+      MessageView(),
     ];
   }
 

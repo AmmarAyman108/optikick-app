@@ -10,6 +10,7 @@ class RoutesName {
   static const stats = '/stats';
   static const playerView = '/PlayerView';
   static const forgetPasswordView = '/ForgetPasswordView';
-  static const  resetEmailView = '/ResetEmailView';
-  static const  newPasswordView = '/NewPasswordView';
+  static const resetEmailView = '/ResetEmailView';
+  static const newPasswordView = '/NewPasswordView';
+  static const chatView = '/ChatView';
 }

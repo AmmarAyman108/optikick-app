@@ -13,7 +13,7 @@ class OverviewSection extends StatelessWidget {
       child: ClipPath(
         clipper: MyClipperPath(),
         child: Container(
-          height: 240.h,
+          height: 210.h,
           width: double.infinity,
           decoration: BoxDecoration(
             boxShadow: [
