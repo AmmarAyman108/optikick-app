@@ -34,7 +34,7 @@ class BottomNavView extends StatelessWidget {
             child: BottomAppBar(
               height: 38.h,
               padding: EdgeInsets.zero,
-              color: const Color.fromARGB(255, 78, 94, 89),
+              color:  const Color.fromARGB(255, 78, 94, 89),
               shape: const CircularNotchedRectangle(),
               notchMargin: 8,
               child: Padding(

@@ -30,6 +30,7 @@ class CustomDrawer extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
+              
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -86,7 +87,7 @@ class CustomDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(
-                Icons.assessment_outlined,
+                Icons.assignment_outlined,
                 color: ColorsManager.realWhiteColor,
               ),
               title: const Text(
@@ -121,6 +122,7 @@ class CustomDrawer extends StatelessWidget {
                 ),
               ),
             ),
+            
             ListTile(
               leading: const Icon(
                 Icons.settings,
