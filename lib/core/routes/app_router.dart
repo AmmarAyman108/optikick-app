@@ -6,6 +6,7 @@ import 'package:optikick/features/auth/presentation/view/new_password_view.dart'
 import 'package:optikick/features/auth/presentation/view/reset_email_view.dart';
 import 'package:optikick/features/bottom_nav/presentation/cubit/bottom_nav_cubit.dart';
 import 'package:optikick/features/bottom_nav/presentation/views/bottom_nav_view.dart';
+import 'package:optikick/features/chat/presentation/view/chat_view.dart';
 import 'package:optikick/features/home/presentation/pages/home_page.dart';
 import 'package:optikick/features/on_boarding/presentation/view/onboarding.dart';
 import 'package:optikick/features/player/views/player_view.dart';
@@ -38,6 +39,8 @@ class AppRouter {
         return _buildRoute(ResetEmailView());
       case RoutesName.newPasswordView:
         return _buildRoute(NewPasswordView());
+      case RoutesName.chatView:
+        return _buildRoute(ChatView());
       case RoutesName.playerView:
         return _buildRoute(PlayerView(
           playerName: "Salah",

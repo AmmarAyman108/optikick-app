@@ -67,11 +67,13 @@ class CustomAppBar extends StatelessWidget {
               ],
             ),
           ),
-          Divider(
-            color: const Color.fromARGB(255, 145, 145, 145),
-            thickness: .5,
-            height: 0,
-          )
+          currentIndex != 2
+              ? Divider(
+                  color: const Color.fromARGB(255, 145, 145, 145),
+                  thickness: .5,
+                  height: 0,
+                )
+              : SizedBox()
         ],
       ),
     );
