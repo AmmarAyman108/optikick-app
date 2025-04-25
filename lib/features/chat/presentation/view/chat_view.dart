@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:optikick/core/widgets/gradient_background.dart';
@@ -47,33 +48,106 @@ class ChatView extends StatelessWidget {
                       EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
                   children: [
                     _buildTimeStamp('Yesterday 9:41'),
-                    _buildMessage(
-                      isMe: false,
-                      message:
-                          'Hey, Doc Derek!\n\nOne of the lads, Sam, said he felt a little pain in his hamstring during training today. Just a little worried about him. What do you think? Serious or just a tweak?',
-                      time: '9:41',
+                    ChatBubble(
+                      clipper: ChatBubbleClipper3(type: BubbleType.sendBubble),
+                      alignment: Alignment.topRight,
+                      shadowColor: Colors.transparent,
+                      margin: EdgeInsets.only(top: 20),
+                      backGroundColor: Colors.blue,
+                      child: Container(
+                        constraints: BoxConstraints(
+                          maxWidth: MediaQuery.of(context).size.width * 0.7,
+                        ),
+                        child: Text(
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
                     ),
                     _buildTimeStamp('Yesterday 9:45'),
-                    _buildMessage(
-                      isMe: true,
-                      message:
-                          'I did a quick evaluation on him right after the session. It doesn\'t seem too serious—probably just some mild strain or muscle tightness.',
-                      time: '9:45',
+                    ChatBubble(
+                      clipper:
+                          ChatBubbleClipper3(type: BubbleType.receiverBubble),
+                      backGroundColor: Color(0xff262628),
+                      shadowColor: Colors.transparent,
+                      margin: EdgeInsets.only(top: 20),
+                      child: Container(
+                        constraints: BoxConstraints(
+                          maxWidth: MediaQuery.of(context).size.width * 0.7,
+                        ),
+                        child: Text(
+                          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
                     ),
-                    _buildTimeStamp('Yesterday 9:50'),
-                    _buildMessage(
-                      isMe: false,
-                      message:
-                          'Phew, that\'s a relief. So, what\'s the plan? When can we have him back?',
-                      time: '9:50',
+                    _buildTimeStamp('Yesterday 9:41'),
+                    ChatBubble(
+                      clipper: ChatBubbleClipper3(type: BubbleType.sendBubble),
+                      alignment: Alignment.topRight,
+                      shadowColor: Colors.transparent,
+                      margin: EdgeInsets.only(top: 20),
+                      backGroundColor: Colors.blue,
+                      child: Container(
+                        constraints: BoxConstraints(
+                          maxWidth: MediaQuery.of(context).size.width * 0.7,
+                        ),
+                        child: Text(
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
                     ),
-                    _buildTimeStamp('Seen 10:02'),
-                    _buildMessage(
-                      isMe: true,
-                      message:
-                          'I\'d recommend resting him for a day or two, with light stretching and recovery. If all goes well, he can ease back into training after that.',
-                      time: '10:02',
-                      isSeen: true,
+                    _buildTimeStamp('Yesterday 9:45'),
+                    ChatBubble(
+                      clipper:
+                          ChatBubbleClipper3(type: BubbleType.receiverBubble),
+                      backGroundColor: Color(0xff262628),
+                      shadowColor: Colors.transparent,
+                      margin: EdgeInsets.only(top: 20),
+                      child: Container(
+                        constraints: BoxConstraints(
+                          maxWidth: MediaQuery.of(context).size.width * 0.7,
+                        ),
+                        child: Text(
+                          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    _buildTimeStamp('Yesterday 9:41'),
+                    ChatBubble(
+                      clipper: ChatBubbleClipper3(type: BubbleType.sendBubble),
+                      alignment: Alignment.topRight,
+                      shadowColor: Colors.transparent,
+                      margin: EdgeInsets.only(top: 20),
+                      backGroundColor: Colors.blue,
+                      child: Container(
+                        constraints: BoxConstraints(
+                          maxWidth: MediaQuery.of(context).size.width * 0.7,
+                        ),
+                        child: Text(
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    _buildTimeStamp('Yesterday 9:45'),
+                    ChatBubble(
+                      clipper:
+                          ChatBubbleClipper3(type: BubbleType.receiverBubble),
+                      backGroundColor: Color(0xff262628),
+                      shadowColor: Colors.transparent,
+                      margin: EdgeInsets.only(top: 20),
+                      child: Container(
+                        constraints: BoxConstraints(
+                          maxWidth: MediaQuery.of(context).size.width * 0.7,
+                        ),
+                        child: Text(
+                          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -98,46 +172,6 @@ class ChatView extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(fontSize: 12.sp, color: Color(0xFFEBEBF5)),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildMessage({
-    required bool isMe,
-    required String message,
-    required String time,
-    bool isSeen = false,
-  }) {
-    return Align(
-      alignment: isMe ? Alignment.centerRight : Alignment.centerLeft,
-      child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 280.w),
-        child: Container(
-          margin: EdgeInsets.only(bottom: 8.h),
-          padding: EdgeInsets.all(12.w),
-          decoration: BoxDecoration(
-            color: isMe ? Color(0xFF0A84FF) : Color(0xFF262628),
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20.r),
-              topRight: Radius.circular(20.r),
-              bottomLeft: isMe ? Radius.circular(20.r) : Radius.circular(0),
-              bottomRight: isMe ? Radius.circular(0) : Radius.circular(20.r),
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                message,
-                style: TextStyle(
-                  fontSize: 14.sp,
-                  color: Colors.white,
-                ),
-              ),
-              SizedBox(height: 4.h),
-            ],
-          ),
         ),
       ),
     );
