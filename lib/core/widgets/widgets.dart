@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class CustomTextField extends StatelessWidget {
+class CustomTextField extends StatefulWidget {
   CustomTextField({
     super.key,
     required this.hint,
@@ -15,12 +15,13 @@ class CustomTextField extends StatelessWidget {
     this.iconw,
     this.suffix,
     this.prefix,
+    this.isPassword = false,
     this.autofocus = false,
     this.onFieldSubmitted,
   });
   String hint;
   Function(String)? onChanged;
-  bool obscureText;
+  bool obscureText, isPassword = false;
   bool autofocus;
   IconData? icon;
   Widget? iconw, suffix, prefix;
@@ -31,13 +32,19 @@ class CustomTextField extends StatelessWidget {
   Function(String)? onFieldSubmitted;
 
   @override
+  State<CustomTextField> createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  bool isObscure = true;
+  @override
   Widget build(BuildContext context) {
     return TextFormField(
       style: const TextStyle(color: Colors.white),
-      onFieldSubmitted: onFieldSubmitted,
-      autofocus: autofocus,
-      focusNode: focusNode,
-      controller: controller,
+      onFieldSubmitted: widget.onFieldSubmitted,
+      autofocus: widget.autofocus,
+      focusNode: widget.focusNode,
+      controller: widget.controller,
       validator: (value) {
         if (value?.isEmpty ?? true) {
           return 'This Field is Required.';
@@ -49,37 +56,44 @@ class CustomTextField extends StatelessWidget {
           return null;
         }
       },
-      onChanged: onChanged,
+      obscureText: widget.isPassword ? isObscure : false,
+      onChanged: widget.onChanged,
       onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
       decoration: InputDecoration(
-        prefix: iconw,
+        suffixIcon: !widget.isPassword
+            ? Icon(
+                widget.icon,
+                color: Colors.white,
+              )
+            : IconButton(
+                icon: Icon(isObscure ? Icons.visibility : Icons.visibility_off,
+                    color: Colors.white),
+                onPressed: () {
+                  setState(() {
+                    isObscure = !isObscure;
+                  });
+                },
+              ), // Set the icon color to white
         hintStyle: const TextStyle(color: Colors.white),
-        suffix: prefix, // Add this line to set the icon color
-        contentPadding: contentPadding,
+        suffix: widget.prefix, // Add this line to set the icon color
+        contentPadding: widget.contentPadding,
         filled: true,
         fillColor: Colors.transparent,
-        focusedErrorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.red, width: .5),
-          borderRadius: BorderRadius.circular(5000),
-        ),
+        focusedErrorBorder: buildBorder(),
         disabledBorder: buildBorder(),
         border: buildBorder(),
         enabledBorder: buildBorder(),
         focusedBorder: buildBorder(),
-        errorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.red, width: 1),
-          borderRadius: BorderRadius.circular(516),
-        ),
-
-        hintText: hint,
+        errorBorder: buildBorder(),
+        hintText: widget.hint,
       ),
-      keyboardType: keyboardType,
+      keyboardType: widget.keyboardType,
     );
   }
 
   OutlineInputBorder buildBorder() {
     return OutlineInputBorder(
-      borderSide: const BorderSide(color: Colors.white, width: 1),
+      borderSide: BorderSide.none,
       borderRadius: BorderRadius.circular(16),
     );
   }

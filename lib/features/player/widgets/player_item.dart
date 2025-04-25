@@ -5,6 +5,7 @@ import 'package:optikick/core/utils/colors.dart';
 
 class PlayerItem extends StatelessWidget {
   const PlayerItem({
+    super.key,
     required this.title,
     this.toDo,
   });
@@ -16,7 +17,7 @@ class PlayerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Container(
-          height: 100.h,
+          padding: EdgeInsets.symmetric(vertical: 10.h),
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             gradient: const LinearGradient(
@@ -68,19 +69,22 @@ class PlayerItem extends StatelessWidget {
                 SizedBox(
                   height: 8.h,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      maxLines: 2,
-                      toDo ?? "",
-                      style: TextStyle(
-                        fontSize: 16.sp,
-                        color: ColorsManager.realWhiteColor,
-                        fontWeight: FontWeight.w500,
+                FittedBox(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        maxLines: 5,
+                        overflow: TextOverflow.ellipsis,
+                        toDo ?? "",
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          color: ColorsManager.realWhiteColor,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),

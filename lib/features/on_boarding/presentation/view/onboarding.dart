@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:optikick/core/constants/assets.dart';
 import 'package:optikick/core/routes/routes.dart';
 import 'package:optikick/core/widgets/gradient_background.dart';
+import 'package:optikick/features/on_boarding/data/models/onboarding_model.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
@@ -12,10 +13,24 @@ class OnboardingView extends StatefulWidget {
 }
 
 class _OnboardingViewState extends State<OnboardingView> {
-  static final List<String> onboardingImages = [
-    Assets.imagesOnboarding2,
-    Assets.imagesOnboarding1,
-    Assets.imagesOnboarding3,
+  static final List<OnboardingModel> onboardingImages = [
+    OnboardingModel(
+      image: Assets.imagesOnboarding2,
+      title: 'Welcome to OptiKick',
+      description: 'Optimizing your performance, one kick at a time.',
+    ),
+    OnboardingModel(
+      image: Assets.imagesOnboarding1,
+      title: 'Expert Analysis in Action',
+      description:
+          'Receive tailored recommendations to enhance your training and reach your goals..',
+    ),
+    OnboardingModel(
+      image: Assets.imagesOnboarding3,
+      title: 'Seamless Communication',
+      description:
+          'Stay connected with your team and get expert guidance instantly.',
+    ),
   ];
 
   final PageController pageController = PageController();
@@ -38,7 +53,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                       onTap: () {
                         Navigator.pushReplacementNamed(
                           context,
-                          RoutesName.bottomNavView,
+                          RoutesName.login
                         );
                       },
                       child: Text(
@@ -59,11 +74,8 @@ class _OnboardingViewState extends State<OnboardingView> {
                       currentPageIndex = index;
                     });
                   },
-                  itemBuilder:
-                      (_, index) => Padding(
-                        padding: EdgeInsets.only(left: index == 2 ? 30.w : 0),
-                        child: Image.asset(onboardingImages[index]),
-                      ),
+                  itemBuilder: (_, index) =>
+                      buildnBoardingWidget(index, onboardingImages[index]),
                 ),
               ),
               Padding(
@@ -85,10 +97,9 @@ class _OnboardingViewState extends State<OnboardingView> {
                               height: currentPageIndex == index ? 12.w : 8.w,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color:
-                                    currentPageIndex == index
-                                        ? Colors.white
-                                        : Colors.white.withAlpha(100),
+                                color: currentPageIndex == index
+                                    ? Colors.white
+                                    : Colors.white.withAlpha(100),
                               ),
                             ),
                           ),
@@ -109,7 +120,7 @@ class _OnboardingViewState extends State<OnboardingView> {
         ),
         onPressed: () {
           if (currentPageIndex == onboardingImages.length - 1) {
-            Navigator.pushReplacementNamed(context, RoutesName.bottomNavView);
+            Navigator.pushReplacementNamed(context, RoutesName.login);
           } else {
             pageController.nextPage(
               duration: const Duration(milliseconds: 300),
@@ -118,6 +129,44 @@ class _OnboardingViewState extends State<OnboardingView> {
           }
         },
         child: const Icon(Icons.arrow_forward),
+      ),
+    );
+  }
+
+  Padding buildnBoardingWidget(int index, OnboardingModel onboardingModel) {
+    return Padding(
+      padding: EdgeInsets.only(left: index == 2 ? 30.w : 0),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 370.h,
+            child: Image.asset(
+              onboardingModel.image,
+            ),
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
+          Text(
+            onboardingModel.title,
+            style: TextStyle(
+              fontSize: 20.sp,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(
+            width: 300.w,
+            child: Text(
+              onboardingModel.description,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 16.sp,
+                color: Colors.white,
+              ),
+            ),
+          )
+        ],
       ),
     );
   }

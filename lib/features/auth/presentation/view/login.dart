@@ -1,19 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:optikick/core/constants/assets.dart';
+import 'package:optikick/core/routes/routes.dart';
+import 'package:optikick/core/widgets/custom_gradient_button.dart';
 import 'package:optikick/core/widgets/gradient_background.dart';
 import 'package:optikick/core/widgets/widgets.dart';
 
-class LoginView extends StatelessWidget {
+class LoginView extends StatefulWidget {
   const LoginView({super.key});
 
+  @override
+  State<LoginView> createState() => _LoginViewState();
+}
+
+class _LoginViewState extends State<LoginView> {
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GradientBackground(
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.symmetric(horizontal: 12.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -46,22 +54,110 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20.h),
-                CustomTextField(
-                  hint: 'ID',
-                  obscureText: false,
-                  iconw: Padding(
-                    padding: const EdgeInsets.only(left: 4),
-                    child: Image.asset('assets/images/Security Pass.png'),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color: const Color.fromARGB(255, 255, 255, 255),
+                      width: 2,
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      Image.asset('assets/images/Security Pass.png'),
+                      Expanded(
+                        child: CustomTextField(
+                          hint: 'ID',
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(height: 20.h),
-                CustomTextField(
-                  hint: 'Password',
-                  obscureText: false,
-                  icon: Icons.visibility_off,
-                  iconw: Padding(
-                    padding: const EdgeInsets.only(left: 4),
-                    child: Image.asset('assets/images/Password.png'),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color: const Color.fromARGB(255, 255, 255, 255),
+                      width: 2,
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      Image.asset('assets/images/Password.png'),
+                      Expanded(
+                        child: CustomTextField(
+                          hint: 'Password',
+                          isPassword: true,
+                          icon: Icons.visibility_off,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 30.h,
+                      child: Checkbox(
+                        value: isChecked,
+                        onChanged: (value) {
+                          setState(() {
+                            isChecked = value!;
+                          });
+                        },
+                        activeColor: Color.fromARGB(255, 98, 163, 163),
+                        checkColor: Colors.white,
+                        side: BorderSide(color: Colors.white),
+                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
+                    ),
+                    Expanded(
+                        child: Text(
+                      'Remember me',
+                      style: TextStyle(
+                        fontSize: 12.sp,
+                        color: Colors.white,
+                      ),
+                    )),
+                  ],
+                ),
+                SizedBox(height: 20.h),
+                CustomGradientButton(
+                  title: 'sign in',
+                  onTap: () {
+                    Navigator.pushNamed(context, RoutesName.bottomNavView);
+                  },
+                ),
+                SizedBox(height: 20.h),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      RoutesName.forgetPasswordView,
+                    );
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 13.h,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: const Color.fromARGB(255, 255, 255, 255),
+                        width: 2,
+                      ),
+                    ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyle(
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
               ],

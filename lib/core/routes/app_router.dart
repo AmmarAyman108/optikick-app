@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:optikick/features/auth/presentation/view/forget_password_view.dart';
 import 'package:optikick/features/auth/presentation/view/login.dart';
+import 'package:optikick/features/auth/presentation/view/new_password_view.dart';
+import 'package:optikick/features/auth/presentation/view/reset_email_view.dart';
 import 'package:optikick/features/bottom_nav/presentation/cubit/bottom_nav_cubit.dart';
 import 'package:optikick/features/bottom_nav/presentation/views/bottom_nav_view.dart';
 import 'package:optikick/features/home/presentation/pages/home_page.dart';
@@ -24,14 +27,22 @@ class AppRouter {
       case RoutesName.home:
         return _buildRoute(HomePage());
       case RoutesName.profile:
-      return _buildRoute(ProfileView());
+        return _buildRoute(ProfileView());
       case RoutesName.stats:
         return _buildRoute(StatsView());
       case RoutesName.trainingProgram:
-      return _buildRoute(TraningProgramView());
+        return _buildRoute(TraningProgramView());
+      case RoutesName.forgetPasswordView:
+        return _buildRoute(ForgetPasswordView());
+      case RoutesName.resetEmailView:
+        return _buildRoute(ResetEmailView());
+      case RoutesName.newPasswordView:
+        return _buildRoute(NewPasswordView());
       case RoutesName.playerView:
-        return _buildRoute(PlayerView(playerName: "Salah",));
-      
+        return _buildRoute(PlayerView(
+          playerName: "Salah",
+        ));
+
       case RoutesName.bottomNavView:
         return _buildRoute(
           BlocProvider(
