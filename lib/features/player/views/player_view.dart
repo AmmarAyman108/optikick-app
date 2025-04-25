@@ -7,7 +7,7 @@ import 'package:optikick/features/player/widgets/player_item.dart';
 class PlayerView extends StatelessWidget {
   const PlayerView({super.key, required this.playerName});
 
-  final String playerName ;
+  final String playerName;
 
   @override
   Widget build(BuildContext context) {
@@ -27,21 +27,18 @@ class PlayerView extends StatelessWidget {
           ),
         ),
         child: Scaffold(
+        
             appBar: AppBar(
               centerTitle: true,
               backgroundColor: ColorsManager.backgroundColor,
               elevation: 0,
               actions: [
                 IconButton(
-                  icon: Icon(
-                    Symbols.edit_square_rounded,
-                    color: ColorsManager.realWhiteColor,
-                    size: 22.sp,
-                   opticalSize: 6.sp
-                  ),
-                  onPressed: () {
-                    
-                  },
+                  icon: Icon(Symbols.edit_square_rounded,
+                      color: ColorsManager.realWhiteColor,
+                      size: 22.sp,
+                      opticalSize: 6.sp),
+                  onPressed: () {},
                 ),
               ],
               leading: IconButton(
@@ -55,7 +52,7 @@ class PlayerView extends StatelessWidget {
                 },
               ),
               title: Text(
-              playerName,
+                playerName,
                 style: TextStyle(
                   fontSize: 18.sp,
                   color: ColorsManager.realWhiteColor,
@@ -69,29 +66,22 @@ class PlayerView extends StatelessWidget {
                     child: Column(
                       children: [
                         PlayerItem(
-                         
                           title: 'Focus :  Stamina & endurance',
-                      
                         ),
                         SizedBox(
                           height: 22.h,
                         ),
-                         PlayerItem(
-                         
+                        PlayerItem(
                           title: 'Cardio exercises: 30 mins/day',
                           toDo: "Interval running drills",
-                      
                         ),
                         SizedBox(
                           height: 22.h,
                         ),
-                         PlayerItem(
-                         
+                        PlayerItem(
                           title: 'Cycling: 45 mins twice a week',
                           toDo: "Proper hydration and recovery techniques",
-                      
                         ),
-                       
                       ],
                     )))));
   }

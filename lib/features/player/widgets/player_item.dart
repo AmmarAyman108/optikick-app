@@ -15,8 +15,9 @@ class PlayerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Container(
+    return Column(
+      children: [
+        Container(
           padding: EdgeInsets.symmetric(vertical: 10.h),
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
@@ -43,21 +44,20 @@ class PlayerItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
-                        height: 35.h,
-                        width: 35.w,
-                        child: Icon(
-                          Symbols.assignment,
-                          size: 30.h,
-                          color: ColorsManager.textIconColor,
-                        )),
-                    SizedBox(
-                      width: 20.w,
+                      height: 35.h,
+                      width: 35.w,
+                      child: Icon(
+                        Symbols.assignment,
+                        size: 30.h,
+                        color: ColorsManager.textIconColor,
+                      ),
                     ),
+                    SizedBox(width: 20.w),
                     Text(
+                      title,
                       textAlign: TextAlign.center,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      title,
                       style: TextStyle(
                         fontSize: 16.sp,
                         color: ColorsManager.realWhiteColor,
@@ -66,29 +66,27 @@ class PlayerItem extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 8.h,
-                ),
-                FittedBox(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        maxLines: 5,
-                        overflow: TextOverflow.ellipsis,
-                        toDo ?? "",
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          color: ColorsManager.realWhiteColor,
-                          fontWeight: FontWeight.w500,
-                        ),
+                SizedBox(height: 8.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      toDo ?? "",
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        color: ColorsManager.realWhiteColor,
+                        fontWeight: FontWeight.w500,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ],
             ),
-          ))
-    ]);
+          ),
+        ),
+      ],
+    );
   }
 }
