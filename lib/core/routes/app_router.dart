@@ -12,6 +12,7 @@ import 'package:optikick/features/on_boarding/presentation/view/onboarding.dart'
 import 'package:optikick/features/player/views/player_view.dart';
 import 'package:optikick/features/profile/presentation/view/profile_view.dart';
 import 'package:optikick/features/reaction_time/presentation/reaction_time_view.dart';
+import 'package:optikick/features/request%20an%20assesment/presentation/views/request_an_assessment_view.dart';
 import 'package:optikick/features/splash/presentation/view/splash_view.dart';
 import 'package:optikick/features/stats/presentation/view/player_stats.dart';
 import 'package:optikick/features/stats/presentation/view/stats_view.dart';
@@ -47,6 +48,8 @@ class AppRouter {
         return _buildRoute(ReactionTimeView());
       case RoutesName.playerStats:
         return _buildRoute(PlayerStats());
+      case RoutesName.submitNewAssesmentRequest:
+        return _buildRoute(SubmitNewAssesmentRequest());
       case RoutesName.playerView:
         return _buildRoute(PlayerView(
           playerName: "Salah",

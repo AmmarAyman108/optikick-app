@@ -1,3 +1,5 @@
+import 'package:optikick/features/request%20an%20assesment/presentation/views/request_an_assessment_view.dart';
+
 class RoutesName {
   static const splash = '/';
   static const onBoarding = '/onBoarding';
@@ -6,7 +8,7 @@ class RoutesName {
   static const bottomNavView = '/bottomNavView';
   static const profile = '/profile';
   static const trainingProgram = '/trainingProgram';
-  static const requestAssessment = '/requestAssessment';
+  static const submitNewAssesmentRequest = '/submitNewAssesmentRequest';
   static const stats = '/stats';
   static const playerView = '/PlayerView';
   static const forgetPasswordView = '/ForgetPasswordView';

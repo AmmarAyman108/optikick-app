@@ -68,6 +68,7 @@ class CustomDrawer extends StatelessWidget {
                 style: TextStyle(color: ColorsManager.realWhiteColor),
               ),
               onTap: () {
+                Navigator.pop(context);
                 Navigator.pushNamed(context, RoutesName.profile);
               },
             ),
@@ -110,6 +111,7 @@ class CustomDrawer extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.pop(context);
+                Navigator.pushNamed(context, RoutesName.submitNewAssesmentRequest);
               },
             ),
             Padding(
