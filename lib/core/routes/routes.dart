@@ -17,4 +17,5 @@ class RoutesName {
   static const playerStats= '/playerStats';
   static const reactionTimeView = '/reactionTimeView';
   static const  viewAllAssessmentRequests = '/viewAllAssessmentRequests';
+  static const  assessmentRequestDetails = '/assessmentRequestDetails';
 }

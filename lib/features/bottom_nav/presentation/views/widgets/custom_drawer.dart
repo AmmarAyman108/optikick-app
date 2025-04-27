@@ -111,8 +111,8 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
                 //  Navigator.pushNamed(context, RoutesName.submitNewAssesmentRequest);// as PLayerView;
-                Navigator.pushNamed(
-                    context, RoutesName.viewAllAssessmentRequests); // as A Admin and Coach
+             //   Navigator.pushNamed(context, RoutesName.viewAllAssessmentRequests); // as A Admin and Coach
+                Navigator.pushNamed(context, RoutesName.assessmentRequestDetails); // as PLayerView;
               },
             ),
             Padding(
