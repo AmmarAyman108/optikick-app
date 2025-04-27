@@ -100,7 +100,7 @@ class AssessmentRequestDetails extends StatelessWidget {
                             ),
                             SizedBox(
                                 width:
-                                    12.w), // horizontal space between buttons
+                                    50.w), // horizontal space between buttons
                             Expanded(
                               child: ActionButton(
                                 text: 'Postpone',
