@@ -1,1 +1,1 @@
-library widgets;
+library;

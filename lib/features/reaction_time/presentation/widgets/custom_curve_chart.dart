@@ -32,7 +32,7 @@ class CustomCurveChart extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 8,
             offset: const Offset(0, 4),
           ),
@@ -51,8 +51,8 @@ class CustomCurveChart extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [440, 430, 420, 410, 400]
-                      .map((num) => Text(
-                            num.toString(),
+                      .map((nu) => Text(
+                            nu.toString(),
                             style: const TextStyle(
                               fontSize: 12,
                               color: Color.fromARGB(255, 255, 255, 255),
@@ -141,7 +141,7 @@ class ChartGridPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Colors.grey.withOpacity(0.2)
+      ..color = Colors.grey.withValues(alpha: 0.2)
       ..strokeWidth = 1
       ..style = PaintingStyle.stroke;
 

@@ -1,1 +1,1 @@
-library usecases;
+library;

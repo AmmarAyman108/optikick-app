@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:optikick/core/widgets/custom_gradient_button.dart';
 import 'package:optikick/core/widgets/gradient_background.dart';
-import 'package:optikick/core/widgets/widgets.dart';
+import 'package:optikick/core/widgets/custom_text_field.dart';
 
 class NewPasswordView extends StatelessWidget {
   const NewPasswordView({super.key});

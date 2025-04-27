@@ -4,9 +4,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:optikick/core/utils/colors.dart';
 
 class PlayerStatsInfo extends StatelessWidget {
-  const PlayerStatsInfo({
-  
-   required this.title, required this.statusValueType, required this.time, required this.statusValue});
+  const PlayerStatsInfo(
+      {super.key,
+      required this.title,
+      required this.statusValueType,
+      required this.time,
+      required this.statusValue});
 
   final String title;
   final String statusValueType;

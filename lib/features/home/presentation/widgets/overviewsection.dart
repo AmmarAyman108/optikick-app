@@ -18,14 +18,14 @@ class OverviewSection extends StatelessWidget {
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.4),
+                color: Colors.black.withValues(alpha: 0.4),
                 offset: Offset(2, 22),
                 blurRadius: 30,
                 spreadRadius: 5,
               ),
             ],
             border: Border.all(
-              color: Colors.white.withOpacity(0.2),
+              color: Colors.white.withValues(alpha: 0.2),
               width: 1,
             ),
             borderRadius: BorderRadius.only(
@@ -50,7 +50,7 @@ class OverviewSection extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     width: 1,
                   ),
                   borderRadius: BorderRadius.only(

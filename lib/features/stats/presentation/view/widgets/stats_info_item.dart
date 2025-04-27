@@ -5,6 +5,7 @@ import 'package:optikick/core/utils/colors.dart';
 
 class StatsInfoItem extends StatelessWidget {
   const StatsInfoItem({
+    super.key,
     required this.title,
     required this.statusValue,
     required this.position,

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:optikick/core/constants/assets.dart';
-import 'package:optikick/core/routes/routes.dart';
 import 'package:optikick/core/utils/colors.dart';
-import 'package:optikick/core/utils/strings.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
@@ -62,7 +60,7 @@ class CustomAppBar extends StatelessWidget {
                   ),
                   tooltip: 'settings',
                   onPressed: () {
-                    Navigator.pushNamed(context, RoutesName.reactionTimeView);
+                  
                   },
                 ),
               ],

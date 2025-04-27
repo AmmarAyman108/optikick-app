@@ -25,7 +25,7 @@ class CircularChartPainter extends CustomPainter {
 
     // Paint for the background circle (unfilled portion)
     final backgroundPaint = Paint()
-      ..color = Colors.grey.withOpacity(0.2)
+      ..color = Colors.grey.withValues(alpha: 0.2)
       ..style = PaintingStyle.stroke
       ..strokeWidth = strokeWidth;
 
@@ -154,7 +154,7 @@ class CardBackgroundPainter extends CustomPainter {
       ..strokeWidth = 4;
 
     for (int i = 0; i < 3; i++) {
-      borderPaint.color = Colors.teal.withOpacity(1.0 - (i * 0.3));
+      borderPaint.color = Colors.teal.withValues(alpha: 1.0 - (i * 0.3));
       final offset = i * 2.0;
       final borderPath = Path()
         ..addRRect(
@@ -327,7 +327,8 @@ class HomeScreenBody extends StatelessWidget {
             // Placeholder for the image
             Container(
               height: 80.h,
-              color: Colors.grey.withOpacity(0.2), // Placeholder for the image
+              color: Colors.grey
+                  .withValues(alpha: 0.2), // Placeholder for the image
               child: Center(
                 child: Text(
                   'Image: $image',

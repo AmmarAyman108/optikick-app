@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:material_symbols_icons/symbols.dart';
-import 'package:optikick/core/utils/colors.dart';
 import 'package:optikick/features/notifications/presentation/view/widgets/notification_tile.dart';
 
 class NotificationsView extends StatelessWidget {

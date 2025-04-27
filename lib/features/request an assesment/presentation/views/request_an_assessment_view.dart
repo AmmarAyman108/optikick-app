@@ -15,7 +15,8 @@ class _SubmitNewAssesmentRequestState extends State<SubmitNewAssesmentRequest> {
   String? selectedIssueType;
   String? selectedDate;
   String? selectedHour;
-  TextEditingController messageController = TextEditingController(); // Controller for message field
+  TextEditingController messageController =
+      TextEditingController(); // Controller for message field
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,8 @@ class _SubmitNewAssesmentRequestState extends State<SubmitNewAssesmentRequest> {
         backgroundColor: ColorsManager.backgroundColor,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
+          icon:
+              const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -97,10 +99,12 @@ class _SubmitNewAssesmentRequestState extends State<SubmitNewAssesmentRequest> {
                         SizedBox(height: 6.h),
                         DropdownButtonFormField(
                           value: selectedIssueType,
-                          decoration: _inputDecoration('Select an issue type', 'Value'),
+                          decoration:
+                              _inputDecoration('Select an issue type', 'Value'),
                           dropdownColor: Colors.black,
                           style: const TextStyle(color: Colors.white),
-                          items: ['Muscle pain', 'Injury', 'Fatigue'].map((item) {
+                          items:
+                              ['Muscle pain', 'Injury', 'Fatigue'].map((item) {
                             return DropdownMenuItem(
                               value: item,
                               child: Text(item),
@@ -131,7 +135,8 @@ class _SubmitNewAssesmentRequestState extends State<SubmitNewAssesmentRequest> {
                         SizedBox(height: 6.h),
                         DropdownButtonFormField<String>(
                           value: selectedDate,
-                          decoration: _inputDecoration('Select a date', 'Value'),
+                          decoration:
+                              _inputDecoration('Select a date', 'Value'),
                           dropdownColor: Colors.black,
                           style: const TextStyle(color: Colors.white),
                           items: ['08 Feb', '09 Feb', '10 Feb'].map((item) {
@@ -165,7 +170,8 @@ class _SubmitNewAssesmentRequestState extends State<SubmitNewAssesmentRequest> {
                         SizedBox(height: 6.h),
                         DropdownButtonFormField<String>(
                           value: selectedHour,
-                          decoration: _inputDecoration('Select a time', 'Value'),
+                          decoration:
+                              _inputDecoration('Select a time', 'Value'),
                           dropdownColor: Colors.black,
                           style: const TextStyle(color: Colors.white),
                           items: ['8 AM', '9 AM', '10 AM'].map((item) {
@@ -200,9 +206,11 @@ class _SubmitNewAssesmentRequestState extends State<SubmitNewAssesmentRequest> {
                         Stack(
                           children: [
                             TextFormField(
-                              controller: messageController, // Assign controller here
+                              controller:
+                                  messageController, // Assign controller here
                               maxLines: 3,
-                              decoration: _inputDecoration('Write your message...', 'Value'),
+                              decoration: _inputDecoration(
+                                  'Write your message...', 'Value'),
                               style: const TextStyle(color: Colors.white),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
@@ -272,13 +280,13 @@ class _SubmitNewAssesmentRequestState extends State<SubmitNewAssesmentRequest> {
       contentPadding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 12.w),
       labelText: label,
       labelStyle: TextStyle(
-        color: Colors.white.withOpacity(0.6),
+        color: Colors.white.withValues(alpha: 0.6),
         fontSize: 14.sp,
         fontWeight: FontWeight.w500,
       ),
       hintText: hint,
       hintStyle: TextStyle(
-        color: Colors.white.withOpacity(0.5),
+        color: Colors.white.withValues(alpha: 0.5),
         fontSize: 14.sp,
       ),
       filled: true,
@@ -286,7 +294,7 @@ class _SubmitNewAssesmentRequestState extends State<SubmitNewAssesmentRequest> {
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.r),
         borderSide: BorderSide(
-          color: Colors.white.withOpacity(0.2),
+          color: Colors.white.withValues(alpha: 0.2),
         ),
       ),
       focusedBorder: OutlineInputBorder(

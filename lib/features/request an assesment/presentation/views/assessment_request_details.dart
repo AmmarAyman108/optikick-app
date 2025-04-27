@@ -123,7 +123,6 @@ class AssessmentRequestDetails extends StatelessWidget {
   }
 }
 
-
 class Label extends StatelessWidget {
   final String text;
   const Label({super.key, required this.text});
@@ -160,7 +159,7 @@ class InfoBox extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF191E26),
         borderRadius: BorderRadius.circular(8.r),
-        border: Border.all(color: Colors.white.withOpacity(0.2)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
       ),
       child: Center(
         child: Text(

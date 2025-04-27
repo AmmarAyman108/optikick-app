@@ -5,7 +5,8 @@ import '../../../core/utils/colors.dart';
 
 class PersonalInfoItem extends StatelessWidget {
   const PersonalInfoItem(
-      {required this.firstTitle,
+      {super.key,
+      required this.firstTitle,
       required this.firstValue,
       required this.secondTitle,
       required this.secondValue});
@@ -25,9 +26,8 @@ class PersonalInfoItem extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                
                 Color.fromARGB(255, 4, 21, 10),
-               // Color.fromARGB(255, 40, 59, 52),
+                // Color.fromARGB(255, 40, 59, 52),
                 Color(0xff5D6E68),
               ],
               stops: [0.0, 0.9],

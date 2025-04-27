@@ -7,6 +7,7 @@ import 'package:optikick/core/utils/colors.dart';
 
 class TraningProgramItem extends StatelessWidget {
   const TraningProgramItem({
+    super.key,
     required this.title,
     required this.statusValue,
     required this.position,

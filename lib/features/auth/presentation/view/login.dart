@@ -4,7 +4,7 @@ import 'package:optikick/core/constants/assets.dart';
 import 'package:optikick/core/routes/routes.dart';
 import 'package:optikick/core/widgets/custom_gradient_button.dart';
 import 'package:optikick/core/widgets/gradient_background.dart';
-import 'package:optikick/core/widgets/widgets.dart';
+import 'package:optikick/core/widgets/custom_text_field.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});

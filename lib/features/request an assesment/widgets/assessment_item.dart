@@ -117,7 +117,7 @@ class AssessmentItem extends StatelessWidget {
         // Full width divider
         Container(
           height: 1,
-          color: Colors.white.withOpacity(0.2),
+          color: Colors.white.withValues(alpha: 0.2),
           width: double.infinity,
         ),
       ],

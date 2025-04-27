@@ -36,7 +36,7 @@ class HomeScreenBody extends StatelessWidget {
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
+                      color: Colors.black.withValues(alpha: 0.3),
                       blurRadius: 24,
                       spreadRadius: 4,
                       offset: Offset(0, 8.h),
@@ -56,9 +56,7 @@ class HomeScreenBody extends StatelessWidget {
                     return InkWell(
                       borderRadius: BorderRadius.circular(12),
                       enableFeedback: true,
-                      onTap: () {
-                        print("tapped on ${card.title}");
-                      },
+                      onTap: () {},
                       child: Hero(
                         tag: 'infoCard_${card.title}',
                         child: InfoCard(
