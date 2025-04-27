@@ -30,7 +30,6 @@ class CustomDrawer extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -68,6 +67,7 @@ class CustomDrawer extends StatelessWidget {
                 style: TextStyle(color: ColorsManager.realWhiteColor),
               ),
               onTap: () {
+                Navigator.pop(context);
                 Navigator.pushNamed(context, RoutesName.profile);
               },
             ),
@@ -110,6 +110,9 @@ class CustomDrawer extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.pop(context);
+                //  Navigator.pushNamed(context, RoutesName.submitNewAssesmentRequest);// as PLayerView;
+             //   Navigator.pushNamed(context, RoutesName.viewAllAssessmentRequests); // as A Admin and Coach
+                Navigator.pushNamed(context, RoutesName.assessmentRequestDetails); // as PLayerView;
               },
             ),
             Padding(
@@ -122,7 +125,6 @@ class CustomDrawer extends StatelessWidget {
                 ),
               ),
             ),
-            
             ListTile(
               leading: const Icon(
                 Icons.settings,

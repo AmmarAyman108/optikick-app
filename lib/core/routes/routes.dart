@@ -1,3 +1,4 @@
+
 class RoutesName {
   static const splash = '/';
   static const onBoarding = '/onBoarding';
@@ -6,7 +7,7 @@ class RoutesName {
   static const bottomNavView = '/bottomNavView';
   static const profile = '/profile';
   static const trainingProgram = '/trainingProgram';
-  static const requestAssessment = '/requestAssessment';
+  static const submitNewAssesmentRequest = '/submitNewAssesmentRequest';
   static const stats = '/stats';
   static const playerView = '/PlayerView';
   static const forgetPasswordView = '/ForgetPasswordView';
@@ -15,4 +16,6 @@ class RoutesName {
   static const chatView = '/ChatView';
   static const playerStats= '/playerStats';
   static const reactionTimeView = '/reactionTimeView';
+  static const  viewAllAssessmentRequests = '/viewAllAssessmentRequests';
+  static const  assessmentRequestDetails = '/assessmentRequestDetails';
 }
