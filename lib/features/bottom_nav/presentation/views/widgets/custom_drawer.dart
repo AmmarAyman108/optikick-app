@@ -30,7 +30,6 @@ class CustomDrawer extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -111,7 +110,9 @@ class CustomDrawer extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.pushNamed(context, RoutesName.submitNewAssesmentRequest);
+                //  Navigator.pushNamed(context, RoutesName.submitNewAssesmentRequest);// as PLayerView;
+                Navigator.pushNamed(
+                    context, RoutesName.viewAllAssessmentRequests); // as A Admin and Coach
               },
             ),
             Padding(
@@ -124,7 +125,6 @@ class CustomDrawer extends StatelessWidget {
                 ),
               ),
             ),
-            
             ListTile(
               leading: const Icon(
                 Icons.settings,

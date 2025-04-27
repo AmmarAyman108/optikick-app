@@ -1,4 +1,3 @@
-import 'package:optikick/features/request%20an%20assesment/presentation/views/request_an_assessment_view.dart';
 
 class RoutesName {
   static const splash = '/';
@@ -17,4 +16,5 @@ class RoutesName {
   static const chatView = '/ChatView';
   static const playerStats= '/playerStats';
   static const reactionTimeView = '/reactionTimeView';
+  static const  viewAllAssessmentRequests = '/viewAllAssessmentRequests';
 }
