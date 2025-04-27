@@ -104,7 +104,7 @@ class AssessmentRequestDetails extends StatelessWidget {
                             Expanded(
                               child: ActionButton(
                                 text: 'Postpone',
-                                backgroundColor: Color(0xFF2E2F33),
+                                backgroundColor: Color(0xFF303030),
                                 textColor: Colors.white,
                               ),
                             ),
