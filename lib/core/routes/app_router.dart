@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optikick/features/auth/presentation/view/forget_password_view.dart';
 import 'package:optikick/features/auth/presentation/view/login.dart';
 import 'package:optikick/features/auth/presentation/view/new_password_view.dart';
+import 'package:optikick/features/auth/presentation/view/otp_view.dart';
 import 'package:optikick/features/auth/presentation/view/reset_email_view.dart';
 import 'package:optikick/features/bottom_nav/presentation/cubit/bottom_nav_cubit.dart';
 import 'package:optikick/features/bottom_nav/presentation/views/bottom_nav_view.dart';
@@ -62,6 +63,8 @@ class AppRouter {
         return _buildRoute(PlayerView(
           playerName: "Salah",
         ));
+      case RoutesName.otpView:
+        return _buildRoute(const OTPView());
 
       case RoutesName.bottomNavView:
         return _buildRoute(

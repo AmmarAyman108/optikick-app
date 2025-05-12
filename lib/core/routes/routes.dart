@@ -18,4 +18,5 @@ class RoutesName {
   static const reactionTimeView = '/reactionTimeView';
   static const  viewAllAssessmentRequests = '/viewAllAssessmentRequests';
   static const  assessmentRequestDetails = '/assessmentRequestDetails';
+  static const  otpView = '/otpView';
 }

@@ -70,7 +70,7 @@ class ResetEmailView extends StatelessWidget {
                 CustomGradientButton(
                   title: 'Continue',
                   onTap: () {
-                    Navigator.pushNamed(context, RoutesName.newPasswordView);
+                    Navigator.pushNamed(context, RoutesName.otpView);
                   },
                 ),
                 SizedBox(
