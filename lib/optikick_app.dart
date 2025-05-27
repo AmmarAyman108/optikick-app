@@ -17,6 +17,7 @@ class OptikickApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: RoutesName.splash,
         theme: ThemeData(
+          
           fontFamily: 'Poppins',
         ),
         onGenerateRoute: AppRouter.generate,
