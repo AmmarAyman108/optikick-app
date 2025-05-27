@@ -1,4 +1,3 @@
-
 import 'package:optikick/core/routes/app_router.dart';
 
 import 'package:flutter/material.dart';
@@ -16,12 +15,11 @@ class OptikickApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (_, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-          initialRoute:RoutesName.splash,
-        // home: BlocProvider(
-        //   create: (context) => BottomNavCubit(),
-        //   child: BottomNavView(),
-        // ), // RoutesName.splash,
-         onGenerateRoute: AppRouter.generate,
+        initialRoute: RoutesName.splash,
+        theme: ThemeData(
+          fontFamily: 'Poppins',
+        ),
+        onGenerateRoute: AppRouter.generate,
       ),
     );
   }
